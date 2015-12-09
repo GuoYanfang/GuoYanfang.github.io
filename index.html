@@ -164,232 +164,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-iamshafang" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/09/iamshafang/" class="article-date">
-  	<time datetime="2015-12-09T05:42:08.000Z" itemprop="datePublished">2015-12-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/09/iamshafang/">请叫我傻芳，谢谢！</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hi ,大家好！我是傻芳，傻芳就是我。</p>
-<p>哈哈哈！！！</p>
-<p>xxx 到此一游</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/［UILesson1］/">［UILesson1］</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-UILesson1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/09/UILesson1/" class="article-date">
-  	<time datetime="2015-12-09T01:58:31.000Z" itemprop="datePublished">2015-12-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/09/UILesson1/">😃第一天 - 预习代码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>此博客仅作课程预习代码</p>
-<p>UIKit - 第一节课 - UIWindow - UIView - UILabel</p>
-<p>//</p>
-<p>//  AppDelegate.m</p>
-<p>//  UILesson1_UIWindow</p>
-<p>//  Created by Apple on 15/11/27.</p>
-<p>//  Copyright © 2015年 HY. All rights reserved.</p>
-<p>//</p>
-<h2 id="#import_“AppDelegate-h”">#import “AppDelegate.h”</h2><h2 id="#import_“ViewController-h”">#import “ViewController.h”</h2><p>@interface AppDelegate ()</p>
-<p>@end</p>
-<p>@implementation AppDelegate</p>
-<hr>
-<ul>
-<li><p>(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions {<br>  // Override point for customization after application launch.</p>
-<p>  // 应用程序启动后,将需要写的代码写在此处</p>
-</li>
-</ul>
-<h3 id="#pragma_mark_-_UIWindow_-">#pragma mark - UIWindow -</h3><p>😄</p>
-<pre><code><span class="comment">/**
- *  UIWindow是一种特殊的UIView，通常在一个app中只会有一个UIWindow
- *  iOS程序启动完毕后，创建的第一个视图控件就是UIWindow
- *  一个iOS程序之所以能显示到屏幕上，完全是因为它有UIWindow。也就说，
- *  没有UIWindow，就看不见任何UI界面
- */</span>
-<span class="keyword">self</span><span class="variable">.window</span> = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen]<span class="variable">.bounds</span>];
-
-<span class="comment">// 为窗口设置背景颜色</span>
-<span class="keyword">self</span><span class="variable">.window</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> whiteColor];
-
-<span class="comment">// 让窗口成为主窗口，并且显示出来。有这个方法，才能把信息显示到屏幕上。</span>
-[<span class="keyword">self</span><span class="variable">.window</span> makeKeyAndVisible];
-
-<span class="comment">// 设置根视图控制器,自xcode 7之后,创建window之后,就一定要设定根视图控制器,否则会崩溃. 写上此句代码之后就没有问题了.</span>
-<span class="keyword">self</span><span class="variable">.window</span><span class="variable">.rootViewController</span> = [[ViewController alloc] init];
-</code></pre><h1 id="此时运行程序的效果是这个样子的">此时运行程序的效果是这个样子的</h1><p>  <img src="http://pfile.cn/oh2v6d" alt="">  </p>
-<h3 id="#pragma_mark_-_属性:frame_-">#pragma mark - 属性:frame -</h3><pre><code>// 创建一个view对象
-UIView <span class="keyword">*</span>view = [[UIView alloc] init];
-/<span class="keyword">*</span><span class="keyword">*</span>
- <span class="keyword">*</span>  frame: 控制位置和大小.
- <span class="keyword">*</span>
- <span class="keyword">*</span>  <span class="comment">@param (位置)x--负责控制手机屏幕的横向坐标frame.origin.x</span>
- <span class="keyword">*</span>  <span class="comment">@param (位置)y--负责控制手机屏幕的纵向坐标frame.origin.y</span>
- <span class="keyword">*</span>  <span class="comment">@param width--负责控制控件在屏幕上显示的宽度 frame.size.width</span>
- <span class="keyword">*</span>  <span class="comment">@param height--负责控件控件在屏幕上显示的高度frame.size.height</span>
- <span class="keyword">*</span>/
-// view.frame = CGRectMake(<span class="variable">&lt;#CGFloat x#&gt;</span>, <span class="variable">&lt;#CGFloat y#&gt;</span>, <span class="variable">&lt;#CGFloat width#&gt;</span>, <span class="variable">&lt;#CGFloat height#&gt;</span>)
-
-/<span class="keyword">*</span><span class="keyword">*</span>
- <span class="keyword">*</span>  为view对象设置frame的大小
- <span class="keyword">*</span>
- <span class="keyword">*</span>  <span class="comment">@param viewX 为窗口的x大小</span>
- <span class="keyword">*</span>  <span class="comment">@param viewY 为窗口的y大小</span>
- <span class="keyword">*</span>  <span class="comment">@param viewW 为窗口的w大小</span>
- <span class="keyword">*</span>  <span class="comment">@param viewH 为窗口的h大小</span>
- <span class="keyword">*</span>/
-CGFloat viewW = 200;
-CGFloat viewH = 200;
-CGFloat viewX = 110;
-CGFloat viewY = 110;
-
-view.frame = CGRectMake(viewX, viewY, viewW, viewH);
-
-// 为view设置颜色
-view.backgroundColor = [UIColor blackColor];
-
-// 将view添加到窗口视图上
-[self.window addSubview:view];
-</code></pre><h1 id="此时运行程序的效果是这个样子的-1">此时运行程序的效果是这个样子的</h1><h2 id="黑色部分是UIView">黑色部分是UIView</h2><p>  <img src="http://pfile.cn/z5ov7v" alt="">  </p>
-<h3 id="#pragma_mark_-_UILabel_-">#pragma mark - UILabel -</h3><pre><code><span class="comment">// 创建一个UILabel,并设置frame大小</span>
-UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(<span class="number">85</span>, <span class="number">85</span>, <span class="number">30</span>, <span class="number">30</span>)];
-
-<span class="comment">// 为label设置背景颜色</span>
-label.backgroundColor = [UIColor whiteColor];
-
-<span class="comment">// 将label添加到view视图上</span>
-[view addSubview:label];
-</code></pre><h1 id="此时运行程序的效果是这个样子的-2">此时运行程序的效果是这个样子的</h1><h2 id="黑色是UIView_白色是UILabel">黑色是UIView   白色是UILabel</h2><p>  <img src="http://pfile.cn/dx400y" alt=""></p>
-<h3 id="#pragma_mark_-_属性:bounds_-">#pragma mark - 属性:bounds -</h3><pre><code><span class="comment">/**
- *  frame指的是：该view在父view坐标系统中的位置和大小。（参照点是父亲的坐标系统）
-
- *  bounds指的是：该view在本身坐标系统中的位置和大小。（参照点是本身坐标系统）
- */</span>
-<span class="function">NSLog</span>(<span class="at_rule">@<span class="string">"%@"</span>,<span class="function">NSStringFromCGRect</span>(view.frame));</span>
-<span class="function">NSLog</span>(<span class="at_rule">@<span class="string">"%@"</span>,<span class="function">NSStringFromCGRect</span>(view.bounds));</span>
-<span class="comment">// 如果你还是不明白,那可以参照图片frame&amp;bounds</span>
-</code></pre><h3 id="#pragma_mark_-_属性:center_-">#pragma mark - 属性:center -</h3><pre><code><span class="comment">/**
- *  center:控制位置的中心点
- */</span>
-
-<span class="built_in">NSLog</span>(<span class="string">@"中心点:%@"</span>,<span class="built_in">NSStringFromCGPoint</span>(view<span class="variable">.center</span>));
-
-<span class="comment">// center的内部实现</span>
-<span class="built_in">CGPoint</span> myCenter = <span class="built_in">CGPointMake</span>(view<span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.width</span>/<span class="number">2</span> + view<span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.x</span>, view<span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.height</span> / <span class="number">2</span> + view<span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.y</span>);
-<span class="built_in">NSLog</span>(<span class="string">@"%f,%f"</span>,myCenter<span class="variable">.x</span>,myCenter<span class="variable">.y</span>);
-
-<span class="keyword">return</span> <span class="literal">YES</span>;
-
-}
-</code></pre><h2 id="如果对Frame_Bounds_仍然不太理解的同学,请看下图,_区别两者之间的区别!">如果对Frame Bounds 仍然不太理解的同学,请看下图, 区别两者之间的区别!</h2><p><img src="http://pfile.cn/jwnl7l" alt=""> </p>
-<hr>
-<p> // 此处代码以后,由系统自带生成,今天不做研究</p>
-<ul>
-<li><p>(void)applicationWillResignActive:(UIApplication *)application {<br>  // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.<br>  // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.<br>}</p>
-</li>
-<li><p>(void)applicationDidEnterBackground:(UIApplication *)application {<br>  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.<br>  // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.<br>}</p>
-</li>
-<li><p>(void)applicationWillEnterForeground:(UIApplication *)application {<br>  // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.<br>}</p>
-</li>
-<li><p>(void)applicationDidBecomeActive:(UIApplication *)application {<br>  // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.<br>}</p>
-</li>
-<li><p>(void)applicationWillTerminate:(UIApplication *)application {<br>  // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.<br>}</p>
-</li>
-</ul>
-<p>@end</p>
-<hr>
-<h1 id="源代码下载"><a href="/../sourceFile/Demo1/UILesson1_UIWindow.zip">源代码下载</a></h1>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/［UILesson1］/">［UILesson1］</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-UILesson2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -604,6 +378,175 @@ loginButton<span class="variable">.backgroundColor</span> = [<span class="built_
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/［UILesson2］/">［UILesson2］</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-UILesson1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/09/UILesson1/" class="article-date">
+  	<time datetime="2015-12-09T01:58:31.000Z" itemprop="datePublished">2015-12-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/09/UILesson1/">😃第一天 - 预习代码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此博客仅作课程预习代码</p>
+<p>UIKit - 第一节课 - UIWindow - UIView - UILabel</p>
+<p>//</p>
+<p>//  AppDelegate.m</p>
+<p>//  UILesson1_UIWindow</p>
+<p>//  Created by Apple on 15/11/27.</p>
+<p>//  Copyright © 2015年 HY. All rights reserved.</p>
+<p>//</p>
+<h2 id="#import_“AppDelegate-h”">#import “AppDelegate.h”</h2><h2 id="#import_“ViewController-h”">#import “ViewController.h”</h2><p>@interface AppDelegate ()</p>
+<p>@end</p>
+<p>@implementation AppDelegate</p>
+<hr>
+<ul>
+<li><p>(BOOL)application:(UIApplication <em>)application didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions {<br>  // Override point for customization after application launch.</p>
+<p>  // 应用程序启动后,将需要写的代码写在此处</p>
+</li>
+</ul>
+<h3 id="#pragma_mark_-_UIWindow_-">#pragma mark - UIWindow -</h3><p>😄</p>
+<pre><code><span class="comment">/**
+ *  UIWindow是一种特殊的UIView，通常在一个app中只会有一个UIWindow
+ *  iOS程序启动完毕后，创建的第一个视图控件就是UIWindow
+ *  一个iOS程序之所以能显示到屏幕上，完全是因为它有UIWindow。也就说，
+ *  没有UIWindow，就看不见任何UI界面
+ */</span>
+<span class="keyword">self</span><span class="variable">.window</span> = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen]<span class="variable">.bounds</span>];
+
+<span class="comment">// 为窗口设置背景颜色</span>
+<span class="keyword">self</span><span class="variable">.window</span><span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> whiteColor];
+
+<span class="comment">// 让窗口成为主窗口，并且显示出来。有这个方法，才能把信息显示到屏幕上。</span>
+[<span class="keyword">self</span><span class="variable">.window</span> makeKeyAndVisible];
+
+<span class="comment">// 设置根视图控制器,自xcode 7之后,创建window之后,就一定要设定根视图控制器,否则会崩溃. 写上此句代码之后就没有问题了.</span>
+<span class="keyword">self</span><span class="variable">.window</span><span class="variable">.rootViewController</span> = [[ViewController alloc] init];
+</code></pre><h1 id="此时运行程序的效果是这个样子的">此时运行程序的效果是这个样子的</h1><p>  <img src="http://pfile.cn/oh2v6d" alt="">  </p>
+<h3 id="#pragma_mark_-_属性:frame_-">#pragma mark - 属性:frame -</h3><pre><code>// 创建一个view对象
+UIView <span class="keyword">*</span>view = [[UIView alloc] init];
+/<span class="keyword">*</span><span class="keyword">*</span>
+ <span class="keyword">*</span>  frame: 控制位置和大小.
+ <span class="keyword">*</span>
+ <span class="keyword">*</span>  <span class="comment">@param (位置)x--负责控制手机屏幕的横向坐标frame.origin.x</span>
+ <span class="keyword">*</span>  <span class="comment">@param (位置)y--负责控制手机屏幕的纵向坐标frame.origin.y</span>
+ <span class="keyword">*</span>  <span class="comment">@param width--负责控制控件在屏幕上显示的宽度 frame.size.width</span>
+ <span class="keyword">*</span>  <span class="comment">@param height--负责控件控件在屏幕上显示的高度frame.size.height</span>
+ <span class="keyword">*</span>/
+// view.frame = CGRectMake(<span class="variable">&lt;#CGFloat x#&gt;</span>, <span class="variable">&lt;#CGFloat y#&gt;</span>, <span class="variable">&lt;#CGFloat width#&gt;</span>, <span class="variable">&lt;#CGFloat height#&gt;</span>)
+
+/<span class="keyword">*</span><span class="keyword">*</span>
+ <span class="keyword">*</span>  为view对象设置frame的大小
+ <span class="keyword">*</span>
+ <span class="keyword">*</span>  <span class="comment">@param viewX 为窗口的x大小</span>
+ <span class="keyword">*</span>  <span class="comment">@param viewY 为窗口的y大小</span>
+ <span class="keyword">*</span>  <span class="comment">@param viewW 为窗口的w大小</span>
+ <span class="keyword">*</span>  <span class="comment">@param viewH 为窗口的h大小</span>
+ <span class="keyword">*</span>/
+CGFloat viewW = 200;
+CGFloat viewH = 200;
+CGFloat viewX = 110;
+CGFloat viewY = 110;
+
+view.frame = CGRectMake(viewX, viewY, viewW, viewH);
+
+// 为view设置颜色
+view.backgroundColor = [UIColor blackColor];
+
+// 将view添加到窗口视图上
+[self.window addSubview:view];
+</code></pre><h1 id="此时运行程序的效果是这个样子的-1">此时运行程序的效果是这个样子的</h1><h2 id="黑色部分是UIView">黑色部分是UIView</h2><p>  <img src="http://pfile.cn/z5ov7v" alt="">  </p>
+<h3 id="#pragma_mark_-_UILabel_-">#pragma mark - UILabel -</h3><pre><code><span class="comment">// 创建一个UILabel,并设置frame大小</span>
+UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(<span class="number">85</span>, <span class="number">85</span>, <span class="number">30</span>, <span class="number">30</span>)];
+
+<span class="comment">// 为label设置背景颜色</span>
+label.backgroundColor = [UIColor whiteColor];
+
+<span class="comment">// 将label添加到view视图上</span>
+[view addSubview:label];
+</code></pre><h1 id="此时运行程序的效果是这个样子的-2">此时运行程序的效果是这个样子的</h1><h2 id="黑色是UIView_白色是UILabel">黑色是UIView   白色是UILabel</h2><p>  <img src="http://pfile.cn/dx400y" alt=""></p>
+<h3 id="#pragma_mark_-_属性:bounds_-">#pragma mark - 属性:bounds -</h3><pre><code><span class="comment">/**
+ *  frame指的是：该view在父view坐标系统中的位置和大小。（参照点是父亲的坐标系统）
+
+ *  bounds指的是：该view在本身坐标系统中的位置和大小。（参照点是本身坐标系统）
+ */</span>
+<span class="function">NSLog</span>(<span class="at_rule">@<span class="string">"%@"</span>,<span class="function">NSStringFromCGRect</span>(view.frame));</span>
+<span class="function">NSLog</span>(<span class="at_rule">@<span class="string">"%@"</span>,<span class="function">NSStringFromCGRect</span>(view.bounds));</span>
+<span class="comment">// 如果你还是不明白,那可以参照图片frame&amp;bounds</span>
+</code></pre><h3 id="#pragma_mark_-_属性:center_-">#pragma mark - 属性:center -</h3><pre><code><span class="comment">/**
+ *  center:控制位置的中心点
+ */</span>
+
+<span class="built_in">NSLog</span>(<span class="string">@"中心点:%@"</span>,<span class="built_in">NSStringFromCGPoint</span>(view<span class="variable">.center</span>));
+
+<span class="comment">// center的内部实现</span>
+<span class="built_in">CGPoint</span> myCenter = <span class="built_in">CGPointMake</span>(view<span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.width</span>/<span class="number">2</span> + view<span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.x</span>, view<span class="variable">.bounds</span><span class="variable">.size</span><span class="variable">.height</span> / <span class="number">2</span> + view<span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.y</span>);
+<span class="built_in">NSLog</span>(<span class="string">@"%f,%f"</span>,myCenter<span class="variable">.x</span>,myCenter<span class="variable">.y</span>);
+
+<span class="keyword">return</span> <span class="literal">YES</span>;
+
+}
+</code></pre><h2 id="如果对Frame_Bounds_仍然不太理解的同学,请看下图,_区别两者之间的区别!">如果对Frame Bounds 仍然不太理解的同学,请看下图, 区别两者之间的区别!</h2><p><img src="http://pfile.cn/jwnl7l" alt=""> </p>
+<hr>
+<p> // 此处代码以后,由系统自带生成,今天不做研究</p>
+<ul>
+<li><p>(void)applicationWillResignActive:(UIApplication *)application {<br>  // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.<br>  // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.<br>}</p>
+</li>
+<li><p>(void)applicationDidEnterBackground:(UIApplication *)application {<br>  // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.<br>  // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.<br>}</p>
+</li>
+<li><p>(void)applicationWillEnterForeground:(UIApplication *)application {<br>  // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.<br>}</p>
+</li>
+<li><p>(void)applicationDidBecomeActive:(UIApplication *)application {<br>  // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.<br>}</p>
+</li>
+<li><p>(void)applicationWillTerminate:(UIApplication *)application {<br>  // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.<br>}</p>
+</li>
+</ul>
+<p>@end</p>
+<hr>
+<h1 id="源代码下载"><a href="/../sourceFile/Demo1/UILesson1_UIWindow.zip">源代码下载</a></h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/［UILesson1］/">［UILesson1］</a>
 	</div>
 
 
